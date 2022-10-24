@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.less';
+import WeatherComponent from './components/WeatherComponent' 
 
 class App extends React.Component {
 render() {
   return (
-    <div>asd</div>
+    <WeatherComponent />
   )
 }
 }
