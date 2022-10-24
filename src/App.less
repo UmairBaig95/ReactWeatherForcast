@@ -1,5 +1,176 @@
+// Font Import
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap");
+
+// Basic Styles
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+}
+body {
+  background-color: rgba(137, 174, 179, 0.2);
+  font-family: "Roboto";
+  font-weight: 300;
+}
+// Utilities
+.container {
+  max-width: 50vw;
+  margin: 5rem auto;
+  padding: 1rem 0;
+}
+.card {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flex {
+  display: flex;
+}
+.justify-center {
+  justify-content: center;
+}
+.align-center {
+  align-items: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-around {
+  justify-content: space-around;
+}
+.justify-evenly {
+  justify-content: space-evenly;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.flex-column {
+  flex-direction: column;
+}
+.half-divided > * {
+  width: 50%;
+}
+.half-divided-vertical > * {
+  height: 50%;
+}
+
+.hover-animation {
+  transition: 500ms;
+  cursor: default;
+}
+.hover-animation:hover {
+  transform: translateY(-3px) scale(1.05);
+
+}
+
+// Component specific utilities
+.borderedRound {
+  border: 4px solid #fff;
+  border-radius: 8px;
+}
+
+// Component Styling
+.linkContainer {
+  margin-bottom: 2rem;
+}
+.linkContainer > div{
+  width: 30%;
+  text-align: center;
+}
+.linkContainer .link {
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: color 200ms;
+  font-weight: 300;
+}
+
+
+.linkContainer .link:hover {
+  color: rgb(0, 162, 255);
+}
+.linkContainer .link.selected {
+  color: rgb(0, 162, 255);
+  font-weight: 600;
+}
+.weatherContent {
+  width: 90%;
+  margin: 0 auto;
+  .borderedRound();
+}
+
+h3 {
+  cursor: default;
+  font-weight: 300;
+  font-size: 30px;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  color: rgb(36, 32, 32);
+  margin-bottom: 1rem;
+}
+.cloudSvg {
+  width: 100%;
+}
+.todayContainer {
+  padding: 2rem 0 4rem 0;
+  border-bottom: 4px solid #fff;
+}
+.todayContent {
+  .flex();
+  .align-center();
+  .justify-center();
+  gap: 1.5rem;
+}
+.todayContent > div {
+  height: 100%;
+}
+.todayContent .text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-container .bold {
+  font-weight: 600;
+  font-size: 40px;
+  color: rgb(68, 58, 58);
+margin-bottom: 0.25rem;
+}
+.img-holder {
+  font-size: 70px;
+  color: rgb(135, 177, 206);
+}
+// Upcoming Weather
+.upcoming-card {
+  width: 25%;
+  .flex();
+  .align-center();
+  .flex-column();
+  padding: 1rem 0;
+  gap: 1rem;
+}
+.upcoming-card:not(:last-of-type) {
+  border-right: 4px solid #fff;
+}
+.upcoming-card h3 {
+font-size: 18px;
+margin-bottom: 0;
+padding-top: 0;
+padding-bottom: 0;
+}
+
+.upcoming-card h3 + * {
+  color: rgb(135, 177, 206);
+  font-size: 40px;
+}
+.upcoming-card > * {
+  transition: 500ms;
+  cursor: default;
+}
+.upcoming-card:hover > * {
+  transform: translateY(-5px) scale(1.05);
+
+}
+.upcoming-card span {
+  font-size: 20px;
+  font-weight: 500;
 }
