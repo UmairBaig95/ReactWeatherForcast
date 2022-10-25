@@ -1,5 +1,8 @@
 // Font Import
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,300,400,700,900');
+
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
 
 // Basic Styles
 * {
@@ -8,17 +11,23 @@
   box-sizing: border-box;
 
 }
+
 body {
   background-color: rgba(137, 174, 179, 0.2);
-  font-family: "Roboto";
-  font-weight: 300;
+  font-family: "Montserrat";
+  font-weight: 400;
 }
+
+html {
+  font-size: 12px;
+}
+
 // Utilities
 .container {
-  max-width: 50vw;
   margin: 5rem auto;
   padding: 1rem 0;
 }
+
 .card {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
@@ -26,31 +35,40 @@ body {
 .flex {
   display: flex;
 }
+
 .justify-center {
   justify-content: center;
 }
+
 .align-center {
   align-items: center;
 }
+
 .justify-between {
   justify-content: space-between;
 }
+
 .justify-around {
   justify-content: space-around;
 }
+
 .justify-evenly {
   justify-content: space-evenly;
 }
+
 .uppercase {
   text-transform: uppercase;
 }
+
 .flex-column {
   flex-direction: column;
 }
-.half-divided > * {
+
+.half-divided>* {
   width: 50%;
 }
-.half-divided-vertical > * {
+
+.half-divided-vertical>* {
   height: 50%;
 }
 
@@ -58,6 +76,7 @@ body {
   transition: 500ms;
   cursor: default;
 }
+
 .hover-animation:hover {
   transform: translateY(-3px) scale(1.05);
 
@@ -73,10 +92,15 @@ body {
 .linkContainer {
   margin-bottom: 2rem;
 }
-.linkContainer > div{
+.text-center
+{
+  text-align: center;
+}
+.linkContainer>div {
   width: 30%;
   text-align: center;
 }
+
 .linkContainer .link {
   font-size: 1.4rem;
   cursor: pointer;
@@ -88,10 +112,12 @@ body {
 .linkContainer .link:hover {
   color: rgb(0, 162, 255);
 }
+
 .linkContainer .link.selected {
   color: rgb(0, 162, 255);
   font-weight: 600;
 }
+
 .weatherContent {
   width: 90%;
   margin: 0 auto;
@@ -108,22 +134,27 @@ h3 {
   color: rgb(36, 32, 32);
   margin-bottom: 1rem;
 }
+
 .cloudSvg {
   width: 100%;
 }
+
 .todayContainer {
   padding: 2rem 0 4rem 0;
   border-bottom: 4px solid #fff;
 }
+
 .todayContent {
   .flex();
   .align-center();
   .justify-center();
   gap: 1.5rem;
 }
-.todayContent > div {
+
+.todayContent>div {
   height: 100%;
 }
+
 .todayContent .text-container {
   display: flex;
   flex-direction: column;
@@ -131,46 +162,136 @@ h3 {
 
 .text-container .bold {
   font-weight: 600;
-  font-size: 40px;
+  font-size: 2em;
+  font-family: "Aldrich";
   color: rgb(68, 58, 58);
-margin-bottom: 0.25rem;
+  margin-bottom: 0.25rem;
 }
+
 .img-holder {
-  font-size: 70px;
-  color: rgb(135, 177, 206);
+  font-size: 3em;
+
+  img {
+    width: 1.5em;
+    height: 1.5em;
+  }
 }
+
 // Upcoming Weather
 .upcoming-card {
-  width: 25%;
+  width: 16.6%;
   .flex();
   .align-center();
   .flex-column();
   padding: 1rem 0;
   gap: 1rem;
 }
+
 .upcoming-card:not(:last-of-type) {
   border-right: 4px solid #fff;
 }
+
 .upcoming-card h3 {
-font-size: 18px;
-margin-bottom: 0;
-padding-top: 0;
-padding-bottom: 0;
+  font-size: 1.2em;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
-.upcoming-card h3 + * {
+.upcoming-card h3+* {
   color: rgb(135, 177, 206);
-  font-size: 40px;
 }
-.upcoming-card > * {
+
+.upcoming-card>* {
   transition: 500ms;
   cursor: default;
 }
-.upcoming-card:hover > * {
+
+.upcoming-card:hover>* {
   transform: translateY(-5px) scale(1.05);
 
 }
+
 .upcoming-card span {
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 1.1em;
+  font-family: "Aldrich";
+  font-weight: 700;
+}
+
+// Spinner 
+
+.test {
+  display: block;
+  padding: 20px;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 100px;
+}
+
+.test.image{
+  background: url(http://lorempixel.com/500/200/nature/1/);
+}
+
+.smt-spinner-circle {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  margin: 20px;
+  border-radius: 50%;
+}
+.smt-spinner {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  border-right: 2px solid rgba(255,255,255,0.6);
+  border-top: 2px solid rgb(0, 162, 255);;
+  border-left: 2px solid rgb(0, 162, 255);;
+  border-bottom: 2px solid rgb(0, 162, 255);
+  animation: rotate--spinner 1.6s infinite;
+}
+
+@keyframes rotate--spinner {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (min-width: 576px) {}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
+  .container {
+    max-width: 650px;
+  }
+
+  .img-holder {
+    font-size: 3em;
+  }
+
+}
+
+@media (min-width: 992px) {
+  html {
+    font-size: 14px;
+  }
+
+  .container {
+    max-width: 750px;
+  }
+
+  .img-holder {
+    font-size: 4em;
+  }
+
+}
+
+@media (min-width: 1200) {
+  html {
+    font-size: 16px;
+  }
 }
